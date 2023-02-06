@@ -1,8 +1,28 @@
 <%- include('./partials/head') %>
 
-<article>
-  <h1>Hallo wereld!</h1>
-  <p>Alles werk! Laat dit visitekaartje in je browser aan een docent zien :D</p>
-</article>
+<header>
+  <article>
+    <img id="mainImage1" src="./assets/stockImage.jpg" alt="stock image">
+    <img id="mainImage2" src="./assets/gym.jpg" alt="stock image">
+    <img id="mainImage3" src="./assets/contact.jpg" alt="stock image">
+    <h1 id="mainH1">Tolga Doganer</h1>
+    <h1 id="secondH1">Hobbies</h1>
+    <h1 id="thirdH1">Contact</h1>
+    <div class="textAboutMyself">
+      <!-- span is a an generic inline element (text styling etc in a paragraph + easy to manpilulate with JS) -->
+      <span id="more1">
+        more1
+      </span>
+      <span id="more2">
+        more2
+      </span>
+      <span id="more3">
+        more3
+      </span>
+      </p>
+      <button class="button" onclick="readMore()" id="readMoreButton">1</button>
+    </div>
+  </article>
+</header>
 
 <%- include('./partials/foot') %>
