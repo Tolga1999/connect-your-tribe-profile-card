@@ -4,6 +4,13 @@ import express from 'express'
 // Maak een nieuwe express app aan
 const app = express()
 
+// maak een const voor de API
+const url = 'https://whois.fdnd.nl/api/v1/member/tolga-doganer';
+// wacht op de url totdat je de data krijgt en DAN verander je de response van je url naar JSON
+const data = await fetch(url).then(response => response.json());
+
+// console.log(data);
+
 // Stel ejs in als template engine en geef de 'views' map door
 app.set('view engine', 'ejs')
 app.set('views', './views')
@@ -13,8 +20,8 @@ app.use(express.static('public'))
 
 // Maak een route voor de index
 app.get('/', function (req, res) {
-  // res.send('Hello World!')
-  res.render('index')
+// render de pagina maar ook de data van de api door naar view
+  res.render('index', data)
 })
 
 // Stel het poortnummer in waar express op gaat luisteren

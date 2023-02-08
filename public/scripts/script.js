@@ -1,6 +1,3 @@
-fetch('https://whois.fdnd.nl/api/v1/members');
-
-
 function readMore(){
     let more1 = document.getElementById("more1")
     let more2 = document.getElementById("more2")
