@@ -14,10 +14,9 @@
   --text-color-white: #FFFF;
 }
 
-/* UTILITY CLASSES */
-/* html {
-  background-image: linear-gradient(90deg, rgba(166, 108, 255, 1), rgba(177, 225, 255, 1));
-} */
+html{
+  cursor: none;
+}
 
 body {
   display: flex;
@@ -106,9 +105,35 @@ article > .links-container > a{
   border: 2px solid var(--background-color-yellow);
   border-radius: 0.5em;
   padding: 0.5em;
+  cursor: none;
 }
 
-/* circle container */
+/* custom mouse container */
+.custom-mouse-container{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 15em;
+  background-color: var(--background-color-yellow);
+  /* standaard positie op 0 zetten voor coordinaten */
+  top: 0;
+  left: 0;
+  /* midden zetten van muis op container */
+  transform: translate(-25px, -25px);
+  transition: ease-out 0.1s;
+  z-index: 10;
+}
+
+/* opacity change when in container */
+.mouse-hover-different-container{
+  opacity: 0.5;
+}
+
+/* article:hover .custom-mouse-container{
+  opacity: 0.5;
+} */
+
+/* background circle container */
 .circle-container, .circle-container2, .circle-container3, .circle-container4, .circle-container5{
   position: absolute;
   width: 20em;
