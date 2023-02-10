@@ -1,161 +1,216 @@
+/* CSS RESET */
 * {
-  box-sizing:border-box; /* account for border + padding to total width for parent container */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
 }
 
-/* COLOR PALETTE: https://colorhunt.co/palette/a66cff9c9efeafb4ffb1e1ff */
-
-/* heebo-700 - latin */
-@font-face {
-  font-family: 'Heebo';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('../assets/fonts/heebo-v21-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../assets/fonts/heebo-v21-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+/* Custom properties */
+:root {
+  --background-color-white: #FFFF;
+  --background-color-black: #000000;
+  --background-color-yellow: #FFD700;
+  --text-color-yellow: #FFD700;
+  --text-color-white: #FFFF;
 }
 
-html {
+/* UTILITY CLASSES */
+/* html {
   background-image: linear-gradient(90deg, rgba(166, 108, 255, 1), rgba(177, 225, 255, 1));
-}
+} */
 
 body {
-  height:100vh;
   display: flex;
   flex-direction: column;
   font-family: 'Heebo';
   justify-content:center;
   align-items:center;
-  color: rgba(255, 255, 255,1)
+  height: 100vh;
+  color: var(--text-color-white);
+  background-color: var(--background-color-black);
+  font-family: Helvetica, sans-serif;
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 5em;
-  margin: 0;
-  height: 30vh;
-  align-self: flex-start;
-  animation: fadeIn 3s;
+main{
+  display: flex;
+  align-items: center;
+  width: 45vw;
+  max-width: 44em;
+  height: 40vh;
+  background-color: var(--background-color-black);
+  border: 10px solid var(--background-color-yellow);
+  border-radius: 0.5em;
+  z-index: 3;
 }
 
-article{
-  transition: 1s;
-  background: rgba(166, 108, 255,1);
-  box-shadow: 0.35em 0.6em rgba(255, 255, 255,1);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin: 0;
-  width: 35vw;
-  border-radius: 1em;
-  padding: 1.5em;
+.image-container, article{
+  width: 50%;
 }
 
-article:hover {
-  transform: scale(1.05);
-  /* transform: rotateY(180deg); */
+
+.image-container{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5em 0 0 0.5em;
 }
 
 /* image front page */
 img {
-  width: 30vw;
+  max-width: 150px;
   position:relative;
   border-radius: 0.5em;
 }
 
-/* text first front page */
-p { 
-  margin:0
+/* github info */
+.github-info-container{
+  display: flex;
+  align-items: center;
+  margin-top: 0.5em;
 }
 
-.textAboutMyself{
+.github-info-container > span{
+  margin-left: 0.2em;
+}
+
+/* article */
+article{
   display: flex;
   flex-direction: column;
-  width: 37vw;
-  padding: 2em;
-  padding-top: 0.5em;
-  padding-bottom: 0;
+  justify-content: flex-start;
+  flex-grow: 1;
 }
 
-.textAboutMyself p{
-  font-size: 1em;
+article > h1{
+  font-size: 3em;
 }
 
-.button{
-  align-self: center;
-  width: 4vw;
-  font-size: 1.25vw;
-  font-weight: bold;
-  color: rgba(166, 108, 255, 1);
+article > p{
+  padding-top: 1em;
+}
+
+.links-container{
+  margin-top: 1.5em;
+  display: flex;
+}
+
+.links-container > a:nth-child(2){
+  margin-left: 1em;
+}
+
+article > .links-container > a{
+  text-decoration: none;
+  color: var(--text-color-yellow);
+  border: 2px solid var(--background-color-yellow);
+  border-radius: 0.5em;
   padding: 0.5em;
-  border: none;
-  border-radius: 1em;
-  background-color: rgba(177, 225, 255,1);
-  transition: 0.75s;
-  /* box-shadow: 0.2em 0.25em rgba(255, 255, 255,1); */
-  margin-top: 1vw;
 }
 
-/* button hovered changes background color and size */
-.button:hover{
-  background-color: rgba(255,255,255,1);
-  transform: scale(1.1);
+/* circle container */
+.circle-container, .circle-container2, .circle-container3, .circle-container4, .circle-container5{
+  position: absolute;
+  width: 20em;
+  height: 20em;
+  border-radius: 15em;
+  background-color: var(--background-color-yellow);
+  top: 15em;
+  right: 30em;
 }
 
-/* button clicked scales it to 1.25 size */
-.button:focus{
-  transform: scale(1.25);
+.circle-container{
+  animation: moveAroundCircle1 120s infinite linear;
+  animation-delay: 0.3s;
 }
 
-/* the more text under id more is not showing */
-
-#mainH1{
-  animation: fadeIn 3s;
+.circle-container2{
+  right: 40em;
+  top: 50em;
+  animation: moveAroundCircle2 120s infinite linear;
 }
 
-#secondH1{
-  display: none;
-  animation: fadeIn 3s;
+.circle-container3{
+  right: 40em;
+  top: -15em;
+  animation: moveAroundCircle3 120s infinite linear;
 }
 
-#thirdH1{
-  display: none;
-  animation: fadeIn 3s;
-}
-
-#mainImage1{
-  height: 40vh;
-  animation: fadeIn 3s;
-}
-
-#mainImage2{
-  display: none;
-  height: 40vh;
-  animation: fadeIn 3s;
-}
-
-#mainImage3{
-  display: none;
-  height: 40vh;
-  animation: fadeIn 3s;
-}
-
-#more1{
-  animation: fadeIn 3s;
-}
-
-#more2{
-  display: none;
-  animation: fadeIn 3s;
-}
-
-#more3{
-  display: none;
-  animation: fadeIn 3s;
+.circle-container4{
+  right: 5em;
+  top: -15em;
+  animation: moveAroundCircle4 120s infinite linear;
 }
 
 
-@keyframes fadeIn{
-  0% {opacity: 0; }
-  100% {opacity: 1; }
+.circle-container5{
+  right: -10em;
+  top: 30em;
+  animation: moveAroundCircle5 120s infinite linear;
+}
+
+/* Keyframes for animation */
+@keyframes moveAroundCircle1 {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translate(-20em, -10em);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+@keyframes moveAroundCircle2 {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translate(50em, -10em);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+@keyframes moveAroundCircle3 {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translate(-30em, 0);
+  }
+  75%{
+    transform: translate(-30em, 20em);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+@keyframes moveAroundCircle4 {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translate(10em, 10em);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+@keyframes moveAroundCircle5 {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translate(-20em, -20em);
+  }
+  100%{
+    transform: translate(0);
+  }
 }
 
 
