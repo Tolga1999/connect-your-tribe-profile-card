@@ -84,10 +84,23 @@ article{
 
 article > h1{
   font-size: 3em;
+  opacity: 0;
+  transition: ease 2s;
+  transform: translateY(3em)
 }
 
 article > p{
+  opacity: 0;
   padding-top: 1em;
+  transition: ease 2s;
+  transition-delay: 1s;
+  transform: translateY(3em)
+}
+
+/* laad text in met JS class */
+.showText{
+  opacity: 1;
+  transform: translateY(0)
 }
 
 .links-container{
@@ -106,6 +119,14 @@ article > .links-container > a{
   border-radius: 0.5em;
   padding: 0.5em;
   cursor: none;
+  transition: 1s ease;
+  z-index: 10;
+}
+
+/* hover links */
+article > .links-container a:hover{
+  background-color: var(--background-color-yellow);
+  color: var(--text-color-white);
 }
 
 /* custom mouse container */
@@ -121,20 +142,12 @@ article > .links-container > a{
   /* midden zetten van muis op container */
   transform: translate(-25px, -25px);
   transition: ease-out 0.1s;
-  z-index: 10;
+  z-index: 3;
+  opacity: 0.75;
 }
-
-/* opacity change when in container */
-.mouse-hover-different-container{
-  opacity: 0.5;
-}
-
-/* article:hover .custom-mouse-container{
-  opacity: 0.5;
-} */
 
 /* background circle container */
-.circle-container, .circle-container2, .circle-container3, .circle-container4, .circle-container5{
+.circle-container, .circle-container2, .circle-container3, .circle-container4, .circle-container5, .circle-container6, .circle-container7, .circle-container8, .circle-container9{
   position: absolute;
   width: 20em;
   height: 20em;
@@ -174,6 +187,30 @@ article > .links-container > a{
   animation: moveAroundCircle5 120s infinite linear;
 }
 
+.circle-container6{
+  left: -5em;
+  top: -10em;
+  animation: moveAroundCircle6 120s infinite linear;
+}
+
+.circle-container7{
+  left: 40em;
+  top: 25em;
+  animation: moveAroundCircle7 120s infinite linear;
+}
+
+.circle-container8{
+  left: 35em;
+  top: 50em;
+  animation: moveAroundCircle8 120s infinite linear;
+}
+
+.circle-container9{
+  left: -10em;
+  top: 35em;
+  animation: moveAroundCircle9 120s infinite linear;
+}
+
 /* Keyframes for animation */
 @keyframes moveAroundCircle1 {
   0%{
@@ -204,10 +241,7 @@ article > .links-container > a{
     transform: translate(0);
   }
   50%{
-    transform: translate(-30em, 0);
-  }
-  75%{
-    transform: translate(-30em, 20em);
+    transform: translate(-30em, 7.5em);
   }
   100%{
     transform: translate(0);
@@ -237,5 +271,54 @@ article > .links-container > a{
     transform: translate(0);
   }
 }
+
+@keyframes moveAroundCircle6 {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translate(5em, 5em);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+@keyframes moveAroundCircle7 {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translate(-35em, -10em);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+@keyframes moveAroundCircle8 {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translate(-25em, -2em);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
+@keyframes moveAroundCircle9 {
+  0%{
+    transform: translate(0);
+  }
+  50%{
+    transform: translate(-5em, -25em);
+  }
+  100%{
+    transform: translate(0);
+  }
+}
+
 
 
