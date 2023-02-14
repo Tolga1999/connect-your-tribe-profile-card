@@ -64,6 +64,18 @@ keyframe animaite toegevoegd per circle
 
 Belangrijke dingen in JS:
 
+Custom cursor gemaakt met coordinaten en `cursor: none`. De coordinaten van de custom element verander na elke mousemove.
+```JS
+// selecteren van elementen/classes
+let mouseContainer = document.querySelector('.custom-mouse-container');
+let body = document.querySelector('body');
+
+body.addEventListener('mousemove', function(coordinates){
+    mouseContainer.style.top = coordinates.clientY + "px";
+    mouseContainer.style.left = coordinates.clientX + "px";
+})
+```
+
 ## Installatie
 Voordat je de applicatie kan runnen moet je node runnen op je lokale computer, Node kan je downloaden op de volgende website: https://nodejs.org/en/.
 Download de stabiele versie 18.14.0 LTS, open je terminal binnen de code editior (zoals VS code) en run de volgende command lines:
