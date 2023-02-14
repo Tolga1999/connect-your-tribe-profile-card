@@ -37,8 +37,14 @@ Download de stabiele versie 18.14.0 LTS, open je terminal binnen de code editior
 - NPM start om je applicatie te runnen, je lokale server wordt meestal gerunned op port 8000.
 
 ## Gebruik
+Binnen de visitekaartje kan je meer info vinden over mijn github naam, github page en mijn Linkedin! Dit zijn allemaal externe links.
 
 ## Bronnen
+- Node download: https://nodejs.org/en/
+- Express/node introductie: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction
+- FDND API: https://whois.fdnd.nl/
+- EJS: https://ejs.co/
+- Using fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 ## Licentie
 
