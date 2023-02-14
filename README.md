@@ -27,7 +27,42 @@ live versie: https://blue-nervous-slug.cyclic.app/
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
 De volgende technieken zijn gebruikt: HTML, CSS, JS, Node, EJS, Express en een API van FDND.
 
+Belangrijke dingen in HTML:
 
+Gebruik van de EJS template
+```HTML
+<h1><%= member.name %> <%= member.surname %></h1>
+```
+
+div containers gemaakt voor de circles
+```HTML
+<div class="circle-container"></div>
+```
+
+Belangrijke dingen in CSS:
+
+absolute items voor de circles
+```CSS
+.circle-container, .circle-container2, .circle-container3, .circle-container4, .circle-container5{
+  position: absolute;
+  width: 20em;
+  height: 20em;
+  border-radius: 15em;
+  background-color: var(--background-color-yellow);
+  top: 15em;
+  right: 30em;
+}
+```
+
+keyframe animaite toegevoegd per circle
+```CSS
+.circle-container{
+  animation: moveAroundCircle1 120s infinite linear;
+  animation-delay: 0.3s;
+}
+```
+
+Belangrijke dingen in JS:
 
 ## Installatie
 Voordat je de applicatie kan runnen moet je node runnen op je lokale computer, Node kan je downloaden op de volgende website: https://nodejs.org/en/.
